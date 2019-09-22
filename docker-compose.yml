@@ -16,8 +16,8 @@ services:
       - 81:8080
       - 83:8081
     volumes:
-      - /home/joshadow/development/constructora/nodeapps/build-admin/:/usr/src/app/build-admin
-      - /home/joshadow/development/constructora/nodeapps/build-client/:/usr/src/app/build-client
+      - /home/constructora-cluster/nodeapps/build-admin/:/usr/src/app/build-admin
+      - /home/constructora-cluster/nodeapps/build-client:/usr/src/app/build-client
 
 
   container_database:

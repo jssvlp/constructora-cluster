@@ -8,6 +8,8 @@ services:
       - 82:80
     links:
       - container_database
+    volumes:
+      - /home/constructora-cluster/nodeapps/build-client/assets:/app/uploads
   container_node:
     build:
       context: ./nodeapps
@@ -15,10 +17,11 @@ services:
     ports:
       - 81:8080
       - 83:8081
+      - 86:8082
     volumes:
       - /home/constructora-cluster/nodeapps/build-admin/:/usr/src/app/build-admin
       - /home/constructora-cluster/nodeapps/build-client:/usr/src/app/build-client
-
+      - /home/constructora-cluster/nodeapps/payment-simulator-mescyt:/usr/src/app/payment-simulator-mescyt
 
   container_database:
     image: mysql:5.7
